@@ -1,46 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Your page title here :)</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="stylesheet" href="./css/index.css">
+<title>COMP 426 Final Project</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 
 </head>
+	
+
+
+
 <body>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        <p>Stuff goes here.<br>Skeleton documentation here: <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
-      </div>
-    </div>
-  </div>
+	<h1> The Gallery </h1>
+	<form id="create" action="" style="display:none;">
+		<div id="divMsg"></div>
+		<input type="text" id="createuser" placeholder="username"><br>
+		<input type="password" id="createpw" placeholder="password"><br>
+		<input type="password" id="confirmpw" placeholder="re-type password"><br>
+		<input type="button" name="createbutton" value="Create" style="padding-bottom=10px" onclick="inUser()"/>
+	</form>
+		
 
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	
+
+
+
+
+	<form id="login" action="" style="display:none;">
+		<div id="divMsg2"></div>
+		<input type="text" id="loginuser" placeholder="username"><br>
+		<input type="password" id="loginpw" placeholder="password"><br>
+		<input type="button" name="loginbutton" value="Login" onclick="logUser()"/>
+	</form>
+
+	
+		
+	<input type="button" id="showCreate" value="Create an account" onclick="showCForm();"><br>
+	<input type="button" id="showLogin" value="Already a user? Login" onclick="showLForm();"/>	
+	<img id = 'my-image' src = "trump.jpg"></img>
+
+<script src ="chromata.min.js"></script>
+<script src ="login.js"></script>
 </body>
 </html>
