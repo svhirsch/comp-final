@@ -30,11 +30,11 @@ function inUser(){
 	if (pw == cmpw){
 	$.ajax({
 		type: "POST",
-		url: "insertUser.php",
+		url: "build/insertUser.php",
 		cache: false,
 		data: {createuser:uname,createpw:pw}
 		}).done(function(data){
-			window.location.href = "main.php";
+			window.location.href = "build/main.php";
 		});			
 	}else{
 		$("#divMsg").html("Passwords do not match");
@@ -47,12 +47,12 @@ function logUser(){
 
 	$.ajax({
 		type: "POST",
-		url: "login.php",
+		url: "build/login.php",
 		cache: false,
 		data: {loginuser:usLogin,loginpw:pwLogin}
 		}).done(function(data){
 			if (data == 1){
-				window.location.href = "main.php";
+				window.location.href = "/build/main.php";
 			}else{
 				$("#divMsg2").html("Account not found");
 			}
