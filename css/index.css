@@ -54,9 +54,12 @@ li:hover{
 	display: block;
 	position: absolute;
 }
+<<<<<<< HEAD
 
 .dropzone {
     border: 2px dashed #0087F7;
     border-radius: 5px;
     background: white;
 }
+=======
+>>>>>>> 136318b11785b5ac1d4d19639fa43186e4493b89
