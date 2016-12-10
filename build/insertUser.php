@@ -1,15 +1,16 @@
 <?php
-		
+
 	$username = $_POST['createuser'];
 	$password = $_POST['createpw'];
 	$password = sha1($password);
-		
-	$con = mysql_connect("localhost:8000", "aube7460", "LMNtrix2");
-	$db = mysql_select_db("aube7460",$con);
-		
-	$sql = "INSERT INTO finalLogin VALUES ('$username', '$password')";
-		
-	$result = mysql_query($sql,$con) or die(mysql_error());
 
-	mysql_close();
+	$con = new mysqli("classroom.cs.unc.edu", "svhirsch", "tsxm33eDncapNJWR", "svhirschdb");
+  if ($con->connect_errno > 0){
+    die("Couldn't connect: " . $con->connect_error);
+  }
+	if(!$con->query("INSERT INTO users ('name', 'pass') VALUES ('$username', '$password')")){
+    echo "Could not insert user: (" . $con->connect_errno . ") " . $con->connect_error;
+  }
+
+	mysqli_close();
 ?>
