@@ -41,16 +41,25 @@ var $grid = $('.grid').isotope({
   itemSelector: '.element-item',
   layoutMode: 'fitRows',
   getSortData: {
-    name: '.name',
-    symbol: '.symbol',
-    number: '.number parseInt',
-    category: '[data-category]',
-    weight: function( itemElem ) {
+    genre: '[data-genre]',
+    price: '[data-price]',
+    id:    '[data-id]',
+    weight : function( itemElem ) {
       var weight = $( itemElem ).find('.weight').text();
       return parseFloat( weight.replace( /[\(\)]/g, '') );
     }
   }
 });
+
+
+
+
+
+//function to insert data attributes from data of deepcopy of database
+
+
+
+
 
 // filter functions
 var filterFns = {
@@ -88,4 +97,8 @@ $('.button-group').each( function( i, buttonGroup ) {
     $( this ).addClass('is-checked');
   });
 });
+
+
+
+
   

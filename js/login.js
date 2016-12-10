@@ -14,13 +14,16 @@ var defaults = {
         };
     
 
-
+//grab random image to display as visualization on the front page
 
 var imageElement = document.getElementById('my-image');
+
+
 var chromata = new Chromata(imageElement, defaults);
 chromata.start();
 
 
+//POSTS password to insertUser and redirects to main
 
 function inUser(){
 	var uname = $('#createuser').val();
@@ -34,13 +37,15 @@ function inUser(){
 		cache: false,
 		data: {createuser:uname,createpw:pw}
 		}).done(function(data){
-			window.location.href = "build/main.php";
+			window.location.href = "build/test.html";
 		});			
 	}else{
 		$("#divMsg").html("Passwords do not match");
 	}
 }
 
+
+//POSTS login to login and checks for an existing account
 function logUser(){
 	var usLogin = $('#loginuser').val();
 	var pwLogin = $('#loginpw').val();
@@ -52,7 +57,7 @@ function logUser(){
 		data: {loginuser:usLogin,loginpw:pwLogin}
 		}).done(function(data){
 			if (data == 1){
-				window.location.href = "/build/main.php";
+				window.location.href = "build/test.html";
 			}else{
 				$("#divMsg2").html("Account not found");
 			}
