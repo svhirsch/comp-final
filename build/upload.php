@@ -36,6 +36,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_dir . $newfilename)) {
 
     } else {
+        
     }
 }
 ?>

@@ -36,37 +36,39 @@ function geocodePlaceId(geocoder, map, infowindow) {
   });
 }
 
+var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
+
 
 $.ajax({
   cache: false,
+  dataType: "json",
     url : "../build/pullImages.php",
     success: function(data) {
-        $(data).find("a").attr("href", function (i, val) {
-            if( val.match(/\.(jpe?g|png|gif|jpg)$/) ) { 
+      $.each(data, function(i, filename){
+                
                 var newImage = document.createElement('div');
-                $(newImage).addClass('dz-preview', 'dz-processing', 'dz-success', 'dz-complete', 'dz-image-preview');
+                $(newImage).addClass('dz-preview dz-processing dz-success dz-complete dz-image-preview');
   
                 var actualImage = document.createElement('div');
-                $(actualImage).addClass('dz-image');
-                $(actualImage).append( "<img src='"+ folder + val + "'>")
+                $(actualImage).addClass('plswork dz-image');
+                $(actualImage).append( "<img src='"+ filename + "'>");
+                $(actualImage).css("background-image", "url(" + filename + ")");
                 $(newImage).append(actualImage);
-                $("body").append(newImage);
-            } 
+                
+                // $("#myForm").append(newImage);
+                var testImage = document.createElement('img');
+                testImage.src = filename;
+                $(testImage).addClass("maybe");
+                bricklayer.append(testImage);
+                
         });
+
+
     }
-});
+
+  });
 
 
-$.ajax({
-            url: "pullImages.php",
-            dataType: "json",
-            success: function (data) {
-
-                $.each(data, function(i,filename) {
-                    $('#imageDiv').prepend('<img src="'+ filename +'"><br>');
-                });
-            }
-        });
 
 
   

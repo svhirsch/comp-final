@@ -1,5 +1,29 @@
 
+.plswork
+{
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-height: 100%;
+    max-width: 100%;
+}
+.maybe
+{
+	max-height: 100%;
+    max-width: 100%;
+}
 #dropzone
 {
 	top: -200px;
+}
+
+@media screen and (min-width: 1200px) {
+  .bricklayer-column-sizer {
+    /* divide by 3. */
+    width: 33.3%;
+  }
 }
