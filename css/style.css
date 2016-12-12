@@ -18,7 +18,7 @@
 }
 #dropzone form
 {
-    margin-left:80%;
+    margin-left:35%;
     text-align: center;
     max-height: 300px;
     max-width:550px;
@@ -37,6 +37,8 @@
 #submitbutton
 {
     margin-left: 3px;
+    background-color:#118bd9; 
+
 }
 #firstForm
 {
@@ -45,7 +47,7 @@
 h1 {
   display: table;
   margin: 40px auto;
-  color: #fff;
+  color: #118bd9;
   font: 20px Helvetica;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -227,7 +229,7 @@ appears on the left side of the page.
     #menu a {
         color: #999;
         border: none;
-        padding: 0.2em 2.7em 0.6em 1em;
+        padding: 0.2em 2.7em .5em 1.5em;
     }e
 
     /*

@@ -47,7 +47,7 @@ $connection = mysql_connect("classroom.cs.unc.edu", "svhirsch", "tsxm33eDncapNJW
 $db = mysql_select_db("svhirschdb", $connection); // Selecting Database
 if (isset($_POST['genre'])) {
 $query = mysql_query("insert into pictures(genre, price, filename) values ('$genre', '$price', '$newfilename')"); //Insert Query
-echo "Form Submitted succesfully";
+
 }
 mysql_close($connection); // Connection Closed
 }

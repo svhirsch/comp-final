@@ -37,28 +37,8 @@ function geocodePlaceId(geocoder, map, infowindow) {
 }
 
 var genres = [];
-// $('#genre').keypress(function (e) {
-//   int lock = 1;
-//   if (e.which == 13) {
-//     if(lock ==1)
-//     {
-//       lock++;
-//       genres.push($(this).val());
-//     }
-//   }
-// });
-
 var prices = [];
-// $('#price').keypress(function (e) {
-//   int lock = 1;
-//   if (e.which == 13) {
-//     if(lock ==1)
-//     {
-//       lock++;
-//       genres.push($(this).val());
-//     }
-//   }
-// });
+
 
 $('#submitbutton').click(function(){
     genres.push($('#genre').val());
@@ -66,8 +46,8 @@ $('#submitbutton').click(function(){
     $('form').fadeOut("slow");
     $('#myForm').css("display", "hidden");
     $('#myForm').fadeIn("slow");
-});
 
+});
 
 
 //input population function
@@ -86,6 +66,7 @@ $(function(){
   }, 500);
 });
 
+//appends additional parameters to Dropzone's http request for uploading images
 Dropzone.autoDiscover = false;
 $('.dropzone').dropzone ({
         url: "../build/upload.php",
@@ -96,11 +77,18 @@ $('.dropzone').dropzone ({
             }),
             this.on("success", function(file, xhr){
                 alert(file.xhr.response);
-            })
-        },
+            }),
+            this.on("addedfile", function(event) {
+            $('#myForm').css("display", "none");
+            $('#firstForm').fadeIn("slow");
+            });   
+        }
+    
 });
 
 var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
+
+
 
 
 $.ajax({
@@ -145,6 +133,8 @@ $.ajax({
       $.each(data, function(i, filename){
                 
               
+
+
         });
 
 
