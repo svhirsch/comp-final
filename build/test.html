@@ -16,8 +16,99 @@
 	</head>
 	
 
-<main>
 
+
+<!--  |---|| |---|-|     |                           |
+   '.--'| |---|-|     |(`,         ,      _      ||
+    '---' '---'-'     |-._   O           `-`    | |  ___
+               ___    |  _`-._       .         _| | |-|-|
+              |---|-. | |    |`.              /   | |-|-|
+       |      |---|-|_| |____| |    ,-.    , |    | |-|-|
+       |`.  _ |---|-|-|.       |    `-'      |    | '-'-'
+          `| `|`-.|-|-||       | ,      .  |||    |
+   `-._     \`.`-|'-|-||       |     ,^.  /  |: : |  ___
+       `-._  \ `-.`-|`||.__    |   . |||_|   |    | |-|-|
+   `-._    |  \   `-._`'._|``.-+._   |,' |   |    | |-|-|
+   `-._`-._)   \      `-.._``'-||_/_,|  .| ,.|    | |-|-|
+   -.,':-.,'    \          ``--._/   |: :| ::|    | '-'-'
+     \ |  |      \    .-.._     :    |   |   |: : |
+     : |-.|       \   '.._/     '    |   |   |    | cafe terrace
+     | |  |        \  ,^.      :     |   |   |    |
+   --| |  |. |`.    `.| |     :      |   |   |,._.--------
+     | |  ||_|__|____|`,'----.'   :: |   |   / _|`.``.````
+     | |  ||(|,'|)|`.|`.-.-. |       | ::|  ,|`'|-|  |
+     | |  |' |  | | || | | | |       |   |  ||`'|-|  |.
+     | |  |  |  | | ||_|_|_|_|--__---'--._`-||`'|-|__|
+     | |  |  |  | | ,`,.'`,.' \`,.'   .   `-._`.|_|__|____
+   --| |  |  |  | |__'  `'__`,.'  `__      .  `-----------
+     | |  |  |  |_`-.-')_`-.-|| \`-.-'   .      -      -
+     | |  |  |,'-.-'^. | |,^|||  \,^._`_ -   -     `-.
+     | |  | ,'__,^. ,-.   ___   ,-.< ___ >         -  `-.
+     | |  |'< __ >  |_| < ___ > |_|\`.|,' `.   -       - `
+     | |  |___\/___ |._._`.|,'_ |._.,'|`. `.`.     -     -
+   ,'| |  |-  )( -: '| | ,'|`.   | |      - `.`.-     -
+     | |  |   -  '' -     ::     -     -     -`.`. -     -
+     |_|,' -    ::     -  ::  -     -     -     `.`.  -
+    ,'  -     -..   -     ::     -     -     -    `.`.   -
+   '       -   ''-        ::  -     -     -     -   `.`
+
+ -->
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#"id="menuLink" class="menu-link">
+
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu">
+            <a class="pure-menu-heading" href="#">Gallery</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
+
+                <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link">Members</a>
+                </li>
+
+                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="header">
+         
+        </div>
+    </div>
+</div>
+
+<div id = "firstForm">
+<h1>Enter Genre and Price for your masterpiece</h1>
+<form>
+  <label>
+    <input id="genre" type="text" placeholder="Genre">
+  </label>
+  <label>
+    <input id = 'price' type="text" placeholder="Price">
+  </label>
+  <!-- <input id = 'submitbutton' class = 'btn btn-primary btn-md ' type="submit" value="Submit"> -->
+</form>
+</div>
+
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">              
+      <div class="modal-body">
+      	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <img src="" class="imagepreview" style="width: 100%;" >
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <main>
 <section>
 <div id = 'dropzone'>
 <form id = 'myForm' action = "upload.php" enctype="multipart/form-data" class = 'dropzone'>
@@ -25,12 +116,11 @@
 </form>
 </div>
   </section>
-</main>
+</main> -->
 
 
-<section>
+<section id = 'gallery'>
 <div class="bricklayer">
-  
 </div>
 </section>
 

@@ -220,7 +220,7 @@ h1.anchor, h2.anchor { margin: 0; padding: 0; height: 0; overflow: hidden; visib
 
 table th { font-size: 1.4rem; color: #646C7F; }
 
-ul, ol { list-style-position: inside; }
+
 
 a { color: #0087F7; text-decoration: none; }
 a:hover { border-bottom: 2px solid #0087F7; }

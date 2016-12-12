@@ -1,4 +1,4 @@
-// Initialize the map.
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 8,
@@ -36,7 +36,25 @@ function geocodePlaceId(geocoder, map, infowindow) {
   });
 }
 
+$(function() {
+  $('input').on('change', function() {
+    var input = $(this);
+    if (input.val().length) {
+      input.addClass('populated');
+    } else {
+      input.removeClass('populated');
+    }
+  });
+  
+  setTimeout(function() {
+    $('#fname').trigger('focus');
+  }, 500);
+});
+
+
+
 var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
+
 
 
 $.ajax({
@@ -69,6 +87,11 @@ $.ajax({
   });
 
 
-
+$(function() {
+    $('.bricklayer-column').on('click', function() {
+      $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+      $('#imagemodal').modal('show');   
+    });   
+});
 
   
