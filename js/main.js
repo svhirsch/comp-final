@@ -109,7 +109,7 @@ $.ajax({
                 
                 // $("#myForm").append(newImage);
                 var testImage = document.createElement('img');
-                var fileID = filename.substring(11,21);
+                var fileID = filename.substring(11,26);
 
                 $(testImage).attr("id", fileID);
                 testImage.src = filename;
@@ -130,16 +130,25 @@ $.ajax({
   dataType: "json",
     url : "../build/pictures.php",
     success: function(data) {
+<<<<<<< HEAD
       $.each(data, function(i, filename){
                 
               
 
 
+=======
+      $.each(data, function(i, fname){
+          
+          var id = data[i].filename;
+          var currentPic = document.getElementById(id);
+          
+          if (currentPic !== null){
+            currentPic.setAttribute("data-genre", data[i].genre);
+            currentPic.setAttribute("data-price", data[i].price);
+          }
+>>>>>>> c7508dca5fb813c303c412ea46bac5476b752046
         });
-
-
     }
-
   });
 
 
