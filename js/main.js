@@ -121,6 +121,9 @@ $.ajax({
                 
                 // $("#myForm").append(newImage);
                 var testImage = document.createElement('img');
+                var fileID = filename.substring(11,21);
+
+                $(testImage).attr("id", fileID);
                 testImage.src = filename;
                 $(testImage).addClass("maybe");
                 bricklayer.append(testImage);
@@ -131,6 +134,24 @@ $.ajax({
     }
 
   });
+
+
+//hook genre and price for each image as data-genre and data-price attributes
+$.ajax({
+  cache: false,
+  dataType: "json",
+    url : "../build/pictures.php",
+    success: function(data) {
+      $.each(data, function(i, filename){
+                
+              
+        });
+
+
+    }
+
+  });
+
 
 
 $(function() {

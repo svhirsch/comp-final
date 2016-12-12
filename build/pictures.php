@@ -4,7 +4,7 @@
     die("main.php failed to connect to MySQL: (" . $con->connect_errno . ") " . $con->connect_error);
   }
   // query to get all pic data
-  $everything = $con->query("select filename, genre, price, userid from pictures");
+  $everything = $con->query("select filename, genre, price from pictures");
 
   if ($everything) {
     $data = array();
