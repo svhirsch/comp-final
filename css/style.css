@@ -16,10 +16,16 @@
 	max-height: 100%;
     max-width: 100%;
 }
-#dropzone
+#dropzone form
 {
-	top: -200px;
+    margin-left:80%;
+    text-align: center;
+    max-height: 300px;
+    max-width:550px;
+    margin-right:10px;
+    display: none;
 }
+
 
 @media screen and (min-width: 1200px) {
   .bricklayer-column-sizer {
@@ -39,10 +45,11 @@
 h1 {
   display: table;
   margin: 40px auto;
+  color: #fff;
   font: 20px Helvetica;
   text-transform: uppercase;
   letter-spacing: 3px;
-  
+
 }
 
 form {

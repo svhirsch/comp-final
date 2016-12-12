@@ -36,7 +36,42 @@ function geocodePlaceId(geocoder, map, infowindow) {
   });
 }
 
-$(function() {
+var genres = [];
+// $('#genre').keypress(function (e) {
+//   int lock = 1;
+//   if (e.which == 13) {
+//     if(lock ==1)
+//     {
+//       lock++;
+//       genres.push($(this).val());
+//     }
+//   }
+// });
+
+var prices = [];
+// $('#price').keypress(function (e) {
+//   int lock = 1;
+//   if (e.which == 13) {
+//     if(lock ==1)
+//     {
+//       lock++;
+//       genres.push($(this).val());
+//     }
+//   }
+// });
+
+$('#submitbutton').click(function(){
+    genres.push($('#genre').val());
+    prices.push($('#price').val());
+    $('form').fadeOut("slow");
+    $('#myForm').css("display", "hidden");
+    $('#myForm').fadeIn("slow");
+});
+
+
+
+//input population function
+$(function(){
   $('input').on('change', function() {
     var input = $(this);
     if (input.val().length) {
@@ -47,14 +82,25 @@ $(function() {
   });
   
   setTimeout(function() {
-    $('#fname').trigger('focus');
+    $('#genre').trigger('focus');
   }, 500);
 });
 
-
+Dropzone.autoDiscover = false;
+$('.dropzone').dropzone ({
+        url: "../build/upload.php",
+        init: function() {
+            this.on("sending", function(file, xhr, formData){
+                formData.append("genre", genres[genres.length-1]);
+                formData.append("price", prices[prices.length-1]);
+            }),
+            this.on("success", function(file, xhr){
+                alert(file.xhr.response);
+            })
+        },
+});
 
 var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
-
 
 
 $.ajax({
@@ -64,14 +110,14 @@ $.ajax({
     success: function(data) {
       $.each(data, function(i, filename){
                 
-                var newImage = document.createElement('div');
-                $(newImage).addClass('dz-preview dz-processing dz-success dz-complete dz-image-preview');
+                // var newImage = document.createElement('div');
+                // $(newImage).addClass('dz-preview dz-processing dz-success dz-complete dz-image-preview');
   
-                var actualImage = document.createElement('div');
-                $(actualImage).addClass('plswork dz-image');
-                $(actualImage).append( "<img src='"+ filename + "'>");
-                $(actualImage).css("background-image", "url(" + filename + ")");
-                $(newImage).append(actualImage);
+                // var actualImage = document.createElement('div');
+                // $(actualImage).addClass('plswork dz-image');
+                // $(actualImage).append( "<img src='"+ filename + "'>");
+                // $(actualImage).css("background-image", "url(" + filename + ")");
+                // $(newImage).append(actualImage);
                 
                 // $("#myForm").append(newImage);
                 var testImage = document.createElement('img');
