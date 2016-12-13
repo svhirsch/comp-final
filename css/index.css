@@ -4,9 +4,11 @@ html {
 body {
 	text-align:center;
 	font-family: 'Roboto', sans-serif;
+    color: #777;
+
 }
 input[type=button]{
-	background:#81D8D0;
+	background:#118bd9;
 	color:white;
 	width:175px;
 	padding:15px;
@@ -14,7 +16,7 @@ input[type=button]{
 }
 
 input[type=button]:hover{
-	background:#77CEC6;
+	background:#118bd9;
 }
 
 input[type=text]{
@@ -49,17 +51,22 @@ li:hover{
 }
 
 
-#my-image
+.landingvis
 {
-	display: block;
 	position: absolute;
+
+	left:0;
+	right:0;
+	margin: 0 auto;
+	bottom:0;
+
 }
-<<<<<<< HEAD
+
+
 
 .dropzone {
     border: 2px dashed #0087F7;
     border-radius: 5px;
     background: white;
 }
-=======
->>>>>>> 136318b11785b5ac1d4d19639fa43186e4493b89
+

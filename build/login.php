@@ -14,7 +14,7 @@
 	$password = mysql_real_escape_string($password);
 
 	// Selecting Database
-	$db = mysql_select_db("aube7460", $con);
+	$db = mysql_select_db("users", $con);
 
 	// SQL query to fetch information of registerd users and finds user match.
 	$sql = "select * from finalLogin where password='$password' AND username='$username'";

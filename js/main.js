@@ -36,14 +36,17 @@ function geocodePlaceId(geocoder, map, infowindow) {
   });
 }
 
+
+var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
 var genres = [];
 var prices = [];
 
 
 $('#submitbutton').click(function(){
+
     genres.push($('#genre').val());
     prices.push($('#price').val());
-    $('form').fadeOut("slow");
+    $('#firstForm').fadeOut("slow");
     $('#myForm').css("display", "hidden");
     $('#myForm').fadeIn("slow");
 
@@ -66,27 +69,74 @@ $(function(){
   }, 500);
 });
 
+
+$('.bricklayer-column').mouseover(function(){
+  
+    var genre = $(this).find(':first-child').attr("data-genre");
+    var price = $(this).find(':first-child').attr("data-price");
+    var genreText = document.createElement('span');
+    var priceText = document.createElement('span');
+    $(genreText).addClass("genreDisplay");
+    $(priceText).addClass("priceDisplay");
+
+    $(genreText).html(genre);
+    $(priceText).html(price);
+    $(".infobox").append(genreText);
+    $(".infobox").append(priceText);
+    setTimeout(function(){
+    $(genreText).fadeOut("slow");
+    $(priceText).fadeOut("slow");
+    }, 1000);
+    $('img.maybe').unbind("mouseover");
+});
+
+$('.bricklayer-column').mouseleave(function(){
+    $('.genreDisplay').remove();
+    $('.priceDisplay').remove();
+   
+
+});
+
+
+
+
 //appends additional parameters to Dropzone's http request for uploading images
 Dropzone.autoDiscover = false;
 $('.dropzone').dropzone ({
         url: "../build/upload.php",
         init: function() {
+            
             this.on("sending", function(file, xhr, formData){
                 formData.append("genre", genres[genres.length-1]);
                 formData.append("price", prices[prices.length-1]);
             }),
             this.on("success", function(file, xhr){
-                alert(file.xhr.response);
+              
+               var src = file.name;
+               var newImage = document.createElement('img');
+               $(newImage).attr("src","../testimages/" + src);
+               $(newImage).addClass("maybe");
+               bricklayer.append(newImage);
             }),
             this.on("addedfile", function(event) {
-            $('#myForm').css("display", "none");
-            $('#firstForm').fadeIn("slow");
-            });   
+            var set = 0;
+            setTimeout(function(){
+                $('#myForm').fadeOut("slow");
+                 $('#firstForm').fadeIn("slow");
+            }, 2000);
+            set++;
+            if(set == 1)
+            {
+              this.removeAllFiles();
+            }
+          });
+            
+
         }
     
 });
 
-var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
+
 
 
 
@@ -97,20 +147,8 @@ $.ajax({
     url : "../build/pullImages.php",
     success: function(data) {
       $.each(data, function(i, filename){
-                
-                // var newImage = document.createElement('div');
-                // $(newImage).addClass('dz-preview dz-processing dz-success dz-complete dz-image-preview');
-  
-                // var actualImage = document.createElement('div');
-                // $(actualImage).addClass('plswork dz-image');
-                // $(actualImage).append( "<img src='"+ filename + "'>");
-                // $(actualImage).css("background-image", "url(" + filename + ")");
-                // $(newImage).append(actualImage);
-                
-                // $("#myForm").append(newImage);
                 var testImage = document.createElement('img');
                 var fileID = filename.substring(11,26);
-
                 $(testImage).attr("id", fileID);
                 testImage.src = filename;
                 $(testImage).addClass("maybe");
@@ -130,13 +168,8 @@ $.ajax({
   dataType: "json",
     url : "../build/pictures.php",
     success: function(data) {
-<<<<<<< HEAD
-      $.each(data, function(i, filename){
                 
-              
 
-
-=======
       $.each(data, function(i, fname){
           
           var id = data[i].filename;
@@ -146,18 +179,12 @@ $.ajax({
             currentPic.setAttribute("data-genre", data[i].genre);
             currentPic.setAttribute("data-price", data[i].price);
           }
->>>>>>> c7508dca5fb813c303c412ea46bac5476b752046
+
         });
     }
+   
   });
 
-
-
-$(function() {
-    $('.bricklayer-column').on('click', function() {
-      $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-      $('#imagemodal').modal('show');   
-    });   
 });
 
   

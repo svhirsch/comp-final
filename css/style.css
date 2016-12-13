@@ -368,3 +368,41 @@ Hides the menu at `48em`, but modify this based on your app's needs.
         left: 150px;
     }
 }
+
+img{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+}
+
+img:hover {
+  -webkit-filter: blur(5px);
+}
+
+.genreDisplay
+{
+    color: #118bd9;
+    position: absolute;
+    bottom: 50%;
+    left: 5%;
+    
+}
+
+.priceDisplay
+{
+    color: #118bd9;
+    position: absolute;
+    bottom: 40%;
+    left: 5%;
+
+  
+}
+.infobox
+{
+    position: absolute;
+    right: 0;
+    width: 200px;
+    height:200px;
+}
