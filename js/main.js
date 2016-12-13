@@ -124,12 +124,24 @@ $('.dropzone').dropzone ({
                 $('#myForm').fadeOut("slow");
                  $('#firstForm').fadeIn("slow");
             }, 2000);
-            set++;
-            if(set == 1)
-            {
-              this.removeAllFiles();
-            }
-          });
+           
+            
+          }),
+             this.on("complete", function() {
+      // If all files have been uploaded
+        if (this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0) {
+
+        var _this = this;
+
+        setTimeout(function(_this){
+        // Remove all files
+        _this.removeAllFiles();
+       }, 600);
+        
+       }
+
+        });
+      
             
 
         }
@@ -185,9 +197,6 @@ $.ajax({
    
   });
 
-});
 
-$("img").hover(function(){
-    
-})
+
   
