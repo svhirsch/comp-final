@@ -369,7 +369,11 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }
 }
 
+<<<<<<< HEAD
 img{
+=======
+img {
+>>>>>>> 3e2656df7759037c0945965527d11d85a4aba4dd
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -379,6 +383,7 @@ img{
 
 img:hover {
   -webkit-filter: blur(5px);
+<<<<<<< HEAD
 }
 
 .genreDisplay
@@ -405,4 +410,6 @@ img:hover {
     right: 0;
     width: 200px;
     height:200px;
+=======
+>>>>>>> 3e2656df7759037c0945965527d11d85a4aba4dd
 }
